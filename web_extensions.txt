@@ -1,0 +1,11 @@
+alexandernanberg.horizon-theme-vscode
+christian-kohler.path-intellisense
+dbaeumer.vscode-eslint
+esbenp.prettier-vscode
+github.vscode-pull-request-github
+ms-vscode-remote.remote-wsl
+ms-vscode.vscode-typescript-next
+ms-vsliveshare.vsliveshare
+pranaygp.vscode-css-peek
+ritwickdey.liveserver
+streetsidesoftware.code-spell-checker
