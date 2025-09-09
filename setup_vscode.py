@@ -123,13 +123,6 @@ def uninstall(args: argparse.Namespace) -> None:
     print_header("Uninstalling successfully")
 
 
-### install backup file
-
-### install the stuff
-
-### uninstall uses web_settings
-
-
 def uninstall_setting(
     current_settings: dict, backup_settings: dict, applied_settings: dict
 ) -> None:
@@ -190,7 +183,7 @@ def backup_settings_json() -> bool:
 def find_settings_json() -> Path:
 
     # override
-    return Path(wsl_expandvars(r"%UserProfile%\Projects\vscode\settings.json"))
+    # return Path(wsl_expandvars(r"%UserProfile%\Projects\vscode\settings.json"))
 
     if sys.platform == "win32":
         return Path(os.path.expandvars(r"%APPDATA%\Code\User\settings.json"))
@@ -291,52 +284,6 @@ def print_end(width: int = 40) -> None:
 def main() -> None:
     args: argparse.Namespace = parse_args()
     args.func(args)
-
-    # backup_settings: dict
-    # current_settings: dict
-
-    # with open(find_backup_settings_json()) as backup_file:
-    #     backup_settings = json.load(backup_file)
-    #     backup_file.close()
-
-    # backup_settings_json()
-
-    # with open(find_settings_json(), "r+") as current_file:
-    #     current_settings = json.load(current_file)
-    #     current_file.close()
-
-    # print_header("backup")
-    # print(json.dumps(backup_settings, indent=2))
-
-    # print_header("current")
-    # print(json.dumps(current_settings, indent=2))
-
-    # def uninstall_setting(
-    #     current_settings: dict, backup_settings: dict, applied_settings: dict
-    # ) -> None:
-
-    #     for applied_key, applied_value in applied_settings.items():
-
-    #         current_value: Any = current_settings.get(applied_key, None)
-    #         backup_value: Any = backup_settings.get(applied_key, None)
-
-    #         if isinstance(applied_value, dict) and isinstance(current_value, dict):
-    #             if backup_value != None:
-    #                 uninstall_setting(current_value, backup_value, applied_value)
-    #             else:
-    #                 current_settings.pop(applied_key, None)
-    #         else:
-    #             if backup_value != None:
-    #                 current_settings[applied_key] = backup_value
-    #             else:
-    #                 current_settings.pop(applied_key, None)
-
-    # uninstall_setting(current_settings, backup_settings, web_settings)
-
-    # print_header("new")
-    # print(json.dumps(current_settings, indent=2))
-
-    # print(find_settings_json())
 
 
 if __name__ == "__main__":
