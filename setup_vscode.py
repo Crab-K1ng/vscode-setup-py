@@ -106,15 +106,15 @@ def uninstall(args: argparse.Namespace) -> None:
         backup_settings: dict
         current_settings: dict
 
-        with open(find_backup_settings_json()) as backup_file:
+        with open(find_backup_settings_json(), "r") as backup_file:
             backup_settings = json.load(backup_file)
 
-        with open(find_settings_json(), "r+") as current_file:
+        with open(find_settings_json(), "r") as current_file:
             current_settings = json.load(current_file)
 
         uninstall_setting(current_settings, backup_settings, web_settings)
 
-        with open(find_settings_json(), "r+") as current_file:
+        with open(find_settings_json(), "w") as current_file:
             json.dump(current_settings, current_file)
 
         print(current_settings)
