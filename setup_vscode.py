@@ -26,6 +26,7 @@ web_extensions: list[str] = [
     "pranaygp.vscode-css-peek",
     "ritwickdey.liveserver",
     "streetsidesoftware.code-spell-checker",
+    "voldemortensen.rainbow-tags"
 ]
 
 web_settings: dict = {
@@ -42,6 +43,8 @@ web_settings: dict = {
         "editor.defaultFormatter": "esbenp.prettier-vscode",
         "editor.suggest.insertMode": "replace",
     },
+    "rainbowTags.denylistTags": ["!DOCTYPE", "html"],
+    "rainbowTags.colors": ["#e6b422", "#c70067", "#00a960", "#3d50f5"],
     "[json]": {"editor.defaultFormatter": "esbenp.prettier-vscode"},
 }
 
